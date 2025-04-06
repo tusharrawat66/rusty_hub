@@ -53,12 +53,13 @@ fn main() {
     
     // println!("{:#?}", carinfo);
 
-    for (k,_v) in &carinfo{
-        if let Some(car) = carinfo.get(k) {
-        println!("{}", car.description()); // Works on a single Car
-
-        println!("{}",car.is_make(&car.make))
+    for (k,v) in &carinfo{
+        match carinfo.get(k) {
+        Some(car)=>println!("Found: {}",car),
+        None=>println!("Car with key: {} not found!",k),
     }
+    println!("{}",v.is_make(&v.make));
+    println!("{}",v.description())
 }
 
 }
