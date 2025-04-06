@@ -29,7 +29,7 @@ impl Car{
 
 fn main() {
     let mut carinfo: HashMap<i32, Car>=HashMap::new();
-
+// Inserting values into HashMap
     carinfo.insert(1,Car{
         id: 1,
         make: String::from("Honda"),
@@ -51,16 +51,32 @@ fn main() {
         color: String::from("Black")
     });
     
-    // println!("{:#?}", carinfo);
-
+    // Iterating over HashMap
     for (k,v) in &carinfo{
         match carinfo.get(k) {
-        Some(car)=>println!("Found: {}",car),
-        None=>println!("Car with key: {} not found!",k),
+            Some(hello) => println!("Found: {}",hello),
+            None => println!("Car with key: {} not found!",k),
+        }
+        // Calling Implementations on struct Car (similar to Class Method in Python)
+        println!("{}", v.is_make(&v.make));
+        println!("{}", v.description());
     }
-    println!("{}",v.is_make(&v.make));
-    println!("{}",v.description())
-}
+
+    // Removing on k:v on the basis of the key from HashMap
+    if let Some(keya)= carinfo.remove(&2){
+        println!("Removed: {} key", keya);
+    }
+
+    println!("{:#?}",carinfo);
+
+    // Method in HashMap that only upates if the key is avaiable else doe nothing
+    carinfo.entry(5).or_insert(Car { id: (4), make: String::from("Mercedes"), model: String::from("E class"), color: String::from("Black") });
+
+    println!("Car fleet size: {}", carinfo.len());
+    println!("Empty? {}", carinfo.is_empty());
+
+    println!("{}", match carinfo.get(&4) {Some(new_car) => new_car.to_string(), None => String::from("Key 4 not found!")});
+
 
 }
 
