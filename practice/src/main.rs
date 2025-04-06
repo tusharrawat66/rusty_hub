@@ -1,5 +1,7 @@
 use std::collections::HashMap;
 use std::fmt::{Display,Formatter, Result};
+mod vector_dtype; 
+
 
 #[derive(Debug)]
 struct Car{
@@ -26,6 +28,8 @@ impl Car{
         self.make == make
     }
 }
+
+
 
 fn main() {
     let mut carinfo: HashMap<i32, Car>=HashMap::new();
@@ -78,5 +82,6 @@ fn main() {
     println!("{}", match carinfo.get(&4) {Some(new_car) => new_car.to_string(), None => String::from("Key 4 not found!")});
 
 
+    vector_dtype::vec_func();
 }
 
