@@ -1,7 +1,8 @@
 use std::collections::HashMap;
 use std::fmt::{Display,Formatter, Result};
-mod vector_dtype; 
-mod owner_borrow_referrence;
+// mod vector_dtype; 
+// mod owner_borrow_referrence;
+mod country_details;
 
 
 #[derive(Debug)]
@@ -83,12 +84,20 @@ fn main() {
     println!("{}", match carinfo.get(&4) {Some(new_car) => new_car.to_string(), None => String::from("Key 4 not found!")});
 
 
-    vector_dtype::vec_func();
-    
-    owner_borrow_referrence::ownership_concept();
-    owner_borrow_referrence::borrowing_concept();
-    owner_borrow_referrence::reference();
-    owner_borrow_referrence::ownership_concept_vec();
-    owner_borrow_referrence::practice();
+    // vector_dtype::vec_func();
+
+    // owner_borrow_referrence::ownership_concept();
+    // owner_borrow_referrence::borrowing_concept();
+    // owner_borrow_referrence::reference();
+    // owner_borrow_referrence::ownership_concept_vec();
+    // owner_borrow_referrence::practice();
+
+    country_details::country();
+
+    let result = country_details::describe_car(String::from("Toyota"), "66");
+    match result{
+        Ok(x)=> println!("Success {}", x),
+        Err(e)=> println!("Error: {}", e)
+    }
 }
 
