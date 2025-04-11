@@ -59,20 +59,28 @@
 
 // Method 2: Early Returns
 
-pub fn parse_coordinates(x:&str, y:&str)-> Result<(i32,i32), String>{
-    let x_int = match x.parse(){
-        Ok(num) if num > 0 => num,
-        Ok(_)=>return Err(String::from("x doesn't have positive value")),
-        Err(_)=>return Err(String::from("x is not a number"))
+// pub fn parse_coordinates(x:&str, y:&str)-> Result<(i32,i32), String>{
+//     let x_int = match x.parse(){
+//         Ok(num) if num > 0 => num,
+//         Ok(_)=>return Err(String::from("x doesn't have positive value")),
+//         Err(_)=>return Err(String::from("x is not a number"))
 
-    };
+//     };
 
-    let y_int = match y.parse(){
-        Ok(num) if num > 0 => num,
-        Ok(_) => return Err(String::from("y doesn't have positive value")),
-        Err(_) => return Err(String::from("y is not a number"))
-    };
+//     let y_int = match y.parse(){
+//         Ok(num) if num > 0 => num,
+//         Ok(_) => return Err(String::from("y doesn't have positive value")),
+//         Err(_) => return Err(String::from("y is not a number"))
+//     };
 
-    Ok((x_int,y_int))
+//     Ok((x_int,y_int))
 
+// }
+
+
+pub fn measure_text(text: &str)-> Result<(usize,String), String>{
+    if text.is_empty(){
+        return Err(String::from("Text is Empty"));
+    }
+    Ok((text.len(),text.to_uppercase()))
 }

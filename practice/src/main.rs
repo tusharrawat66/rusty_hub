@@ -108,13 +108,17 @@ fn main() {
     //     Err(e)=> println!("Error: {}",e)
     // }
 
-    let result = tuples_dtype::parse_coordinates("1","5");
+    // let result = tuples_dtype::parse_coordinates("1","5");
+    // match result {
+    //     Ok((id1,id2)) => println!("Coordinate x:{} & y:{}",id1,id2),
+    //     Err(e) => println!("Error: {}", e)    
+    // }
+
+
+    let result = tuples_dtype::measure_text("tushar");
     match result {
-        Ok((id1,id2)) => println!("Coordinate x:{} & y:{}",id1,id2),
-        Err(e) => println!("Error: {}", e) 
-        
+        Ok((size,uppercae)) => println!("{}, {}",size,uppercae),
+        Err(e) => println!("Error: {}",e)
     }
-
-
 }
 
