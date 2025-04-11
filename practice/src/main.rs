@@ -2,7 +2,8 @@ use std::collections::HashMap;
 use std::fmt::{Display,Formatter, Result};
 // mod vector_dtype; 
 // mod owner_borrow_referrence;
-mod country_details;
+// mod country_details;
+mod tuples_dtype;
 
 
 #[derive(Debug)]
@@ -92,12 +93,28 @@ fn main() {
     // owner_borrow_referrence::ownership_concept_vec();
     // owner_borrow_referrence::practice();
 
-    country_details::country();
+    // country_details::country();
 
-    let result = country_details::describe_car(String::from("Toyota"), "66");
-    match result{
-        Ok(x)=> println!("Success {}", x),
-        Err(e)=> println!("Error: {}", e)
+    // let result = country_details::describe_car(String::from("Toyota"), "1");
+    // match result{
+    //     Ok(x)=> println!("Success {}", x),
+    //     Err(e)=> println!("Error: {}", e)
+
+    // tuples_dtype::practice();
+
+    // let result = tuples_dtype::get_car_info("$", "BMW");
+    // match result {
+    //     Ok((id,desc))=> println!("ID: {}, Desc: {}", id, desc),
+    //     Err(e)=> println!("Error: {}",e)
+    // }
+
+    let result = tuples_dtype::parse_coordinates("1","5");
+    match result {
+        Ok((id1,id2)) => println!("Coordinate x:{} & y:{}",id1,id2),
+        Err(e) => println!("Error: {}", e) 
+        
     }
+
+
 }
 
