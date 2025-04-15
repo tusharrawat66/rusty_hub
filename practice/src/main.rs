@@ -102,19 +102,43 @@ fn main() {
 
     // tuples_dtype::practice();
 
-    // let result = tuples_dtype::get_car_info("$", "BMW");
+    // let result = tuples_dtype::get_car_info("55", "BMW");
     // match result {
     //     Ok((id,desc))=> println!("ID: {}, Desc: {}", id, desc),
     //     Err(e)=> println!("Error: {}",e)
     // }
 
-    let result = tuples_dtype::parse_coordinates("1","5");
+    // let result = tuples_dtype::parse_coordinates("1","5");
+    // match result {
+    //     Ok((id1,id2)) => println!("Coordinate x:{} & y:{}",id1,id2),
+    //     Err(e) => println!("Error: {}", e)    
+    // }
+
+
+    // let result = tuples_dtype::measure_text("tushar");
+    // match result {
+    //     Ok((size,uppercae)) => println!("{}, {}",size,uppercae),
+    //     Err(e) => println!("Error: {}",e)
+    // }
+
+
+    // let result = tuples_dtype::validate_car_tuple("0","333");
+    // match result {
+    //     Ok((id,speed)) => println!("{}, {}",id,speed),
+    //     Err(e) => println!("Error: {}",e)
+    // }
+
+    // let result = tuples_dtype::full_name("Tushar", "Rawat");
+    // match result {
+    //     Ok((full_name, char_len)) => println!("{}, {}",full_name, char_len),
+    //     Err(e) => println!("Error: {}", e)
+    // }
+
+
+    let result = tuples_dtype::even_pair("4", "2");
     match result {
-        Ok((id1,id2)) => println!("Coordinate x:{} & y:{}",id1,id2),
-        Err(e) => println!("Error: {}", e) 
-        
+        Ok((num1, num2)) => println!("{}, {}",num1, num2),
+        Err(e) => println!("Error: {}", e)
     }
-
-
 }
 
