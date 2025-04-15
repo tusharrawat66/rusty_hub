@@ -3,7 +3,8 @@ use std::fmt::{Display,Formatter, Result};
 // mod vector_dtype; 
 // mod owner_borrow_referrence;
 // mod country_details;
-mod tuples_dtype;
+// mod tuples_dtype;
+mod fibonnaci;
 
 
 #[derive(Debug)]
@@ -135,10 +136,13 @@ fn main() {
     // }
 
 
-    let result = tuples_dtype::even_pair("4", "2");
-    match result {
-        Ok((num1, num2)) => println!("{}, {}",num1, num2),
-        Err(e) => println!("Error: {}", e)
-    }
+    // let result = tuples_dtype::even_pair("4", "2");
+    // match result {
+    //     Ok((num1, num2)) => println!("{}, {}",num1, num2),
+    //     Err(e) => println!("Error: {}", e)
+    // }
+
+    let result =  fibonnaci::fibo(92);
+    println!("{:?}",result);
 }
 
