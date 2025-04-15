@@ -60,14 +60,14 @@
 // Method 2: Early Returns
 
 // pub fn parse_coordinates(x:&str, y:&str)-> Result<(i32,i32), String>{
-//     let x_int = match x.parse(){
+//     let x_int: i32 = match x.parse(){
 //         Ok(num) if num > 0 => num,
 //         Ok(_)=>return Err(String::from("x doesn't have positive value")),
 //         Err(_)=>return Err(String::from("x is not a number"))
 
 //     };
 
-//     let y_int = match y.parse(){
+//     let y_int: i32 = match y.parse(){
 //         Ok(num) if num > 0 => num,
 //         Ok(_) => return Err(String::from("y doesn't have positive value")),
 //         Err(_) => return Err(String::from("y is not a number"))
@@ -78,9 +78,55 @@
 // }
 
 
-pub fn measure_text(text: &str)-> Result<(usize,String), String>{
-    if text.is_empty(){
-        return Err(String::from("Text is Empty"));
-    }
-    Ok((text.len(),text.to_uppercase()))
+// pub fn measure_text(text: &str)-> Result<(usize,String), String>{
+//     if text.is_empty(){
+//         return Err(String::from("Text is Empty"));
+//     }
+//     Ok((text.len(),text.to_uppercase()))
+// }
+
+
+
+// pub fn validate_car_tuple(id: &str, speed: &str)-> Result<(i32,i32), String>{
+//     let id_var: i32 = match id.parse(){
+//                                 Ok(num) if num > 0 => num,
+//                                 Ok(_) => return Err(String::from("id is less than zero")),
+//                                 Err(_) => return Err(String::from("id is not a number"))
+//     };
+
+//     let speed_var: i32 = match speed.parse(){
+//         Ok(num) if num > 0 => num,
+//         Ok(_) => return Err(String::from("speed is less than zero")),
+//         Err(_) => return Err(String::from("speed is not a number"))
+//     };
+
+//     Ok((id_var,speed_var))
+// }
+
+
+// pub fn full_name(first: &str, last: &str)-> Result<(String,usize),String>{
+//     if first.len() < 2 || last.len() < 2{ 
+//         return Err(String::from("Name part too short!"));
+//     }
+
+//     let full_name: String = format!("{} {}",first,last);
+//     let char_length: usize = full_name.len();
+//     Ok((full_name,char_length))
+
+// }
+
+pub fn even_pair(num1: &str, num2: &str)-> Result<(i32,i32), String>{
+    let num_one = match num1.parse(){
+        Ok(num) if num%2 == 0 => num,
+        Ok(_) => return Err(String::from("Numbers must be even!")), 
+        Err(_) => return Err(String::from("Invalid number!"))
+    };
+
+    let num_two = match num2.parse(){
+        Ok(num) if num%2 == 0 => num,
+        Ok(_) => return Err(String::from("Numbers must be even!")), 
+        Err(_) => return Err(String::from("Invalid number!"))
+    };
+
+    Ok((num_one, num_two))
 }
