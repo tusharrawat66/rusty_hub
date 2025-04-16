@@ -4,8 +4,9 @@ use std::fmt::{Display,Formatter, Result};
 // mod owner_borrow_referrence;
 // mod country_details;
 // mod tuples_dtype;
-mod fibonnaci;
-mod filter_cars;
+// mod fibonnaci;
+// mod filter_cars;
+mod parse_nums_string;
 
 
 #[derive(Debug,Clone)]
@@ -146,12 +147,18 @@ fn main() {
     // let result =  fibonnaci::fibo(5);
     // println!("{:?}",result);
 
-    let mut car_list:Vec<Car> = Vec::new(); 
-    car_list.push(Car { id: 1, make: String::from("Volkswagen"), model: String::from("Golf"), color: String::from("Red") });
-    car_list.push(Car { id: 2, make: String::from("Toyota"), model: String::from("Camry"), color: String::from("White") });
-    car_list.push(Car { id: 3, make: String::from("Ford"), model: String::from("Ecosport"), color: String::from("Grey") });
+    // let mut car_list:Vec<Car> = Vec::new(); 
+    // car_list.push(Car { id: 1, make: String::from("Volkswagen"), model: String::from("Golf"), color: String::from("Red") });
+    // car_list.push(Car { id: 2, make: String::from("Toyota"), model: String::from("Camry"), color: String::from("White") });
+    // car_list.push(Car { id: 3, make: String::from("Ford"), model: String::from("Ecosport"), color: String::from("Grey") });
+    // let result = filter_cars::filter_cars_by_make(&car_list,"Toyota");
+    // println!("\n{:#?}",result);
 
-    let result = filter_cars::filter_cars_by_make(&car_list,"Toyota");
-    println!("\n{:#?}",result);
+    let result = parse_nums_string::sum_numbers("1,2,3");
+    match result {
+        Ok(res)=> println!("Sum of nums: {:?}", res),
+        Err(e)=> println!("Error: {}",e)
+        
+    }
 }
 
