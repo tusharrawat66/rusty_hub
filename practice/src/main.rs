@@ -3,10 +3,13 @@ use std::fmt::{Display,Formatter, Result};
 // mod vector_dtype; 
 // mod owner_borrow_referrence;
 // mod country_details;
-mod tuples_dtype;
+// mod tuples_dtype;
+// mod fibonnaci;
+// mod filter_cars;
+mod parse_nums_string;
 
 
-#[derive(Debug)]
+#[derive(Debug,Clone)]
 struct Car{
     id: i32,
     make: String,
@@ -135,10 +138,27 @@ fn main() {
     // }
 
 
-    let result = tuples_dtype::even_pair("4", "2");
+    // let result = tuples_dtype::even_pair("4", "2");
+    // match result {
+    //     Ok((num1, num2)) => println!("{}, {}",num1, num2),
+    //     Err(e) => println!("Error: {}", e)
+    // }
+
+    // let result =  fibonnaci::fibo(5);
+    // println!("{:?}",result);
+
+    // let mut car_list:Vec<Car> = Vec::new(); 
+    // car_list.push(Car { id: 1, make: String::from("Volkswagen"), model: String::from("Golf"), color: String::from("Red") });
+    // car_list.push(Car { id: 2, make: String::from("Toyota"), model: String::from("Camry"), color: String::from("White") });
+    // car_list.push(Car { id: 3, make: String::from("Ford"), model: String::from("Ecosport"), color: String::from("Grey") });
+    // let result = filter_cars::filter_cars_by_make(&car_list,"Toyota");
+    // println!("\n{:#?}",result);
+
+    let result = parse_nums_string::sum_numbers("1,2,3");
     match result {
-        Ok((num1, num2)) => println!("{}, {}",num1, num2),
-        Err(e) => println!("Error: {}", e)
+        Ok(res)=> println!("Sum of nums: {:?}", res),
+        Err(e)=> println!("Error: {}",e)
+        
     }
 }
 
