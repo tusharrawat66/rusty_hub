@@ -154,11 +154,39 @@ fn main() {
     // let result = filter_cars::filter_cars_by_make(&car_list,"Toyota");
     // println!("\n{:#?}",result);
 
-    let result = parse_nums_string::sum_numbers("1,2,3");
-    match result {
-        Ok(res)=> println!("Sum of nums: {:?}", res),
-        Err(e)=> println!("Error: {}",e)
+    // let result = parse_nums_string::sum_numbers("1,2,3");
+    // match result {
+    //     Ok(res)=> println!("Sum of nums: {:?}", res),
+    //     Err(e)=> println!("Error: {}",e)
         
-    }
+    // }
+
+    // let hello: std::result::Result<(i32, i32), String> = parse_nums_string::min_max("1,8,80,332,134,11,45");
+    // match &hello {
+    //     Ok((res1, res2))=> println!("Max: {}, Min: {}", res1, res2),
+    //     Err(e)=> println!("Error: {}",e)
+        
+    // }
+    // println!("{:?}", hello);
+
+    let tests = [
+        "user@domain.com",
+        "user.name@sub.domain.co.uk",
+        "user@",
+        "@domain.com",
+        "user@domain",
+        "user@.com",
+        "",
+        "a@@b.com",
+        "user@domain..com",
+        "tushar.rawat@gmail.com"
+    ];    
+
+    for email in tests{
+        match parse_nums_string::validate_email(email){
+            Ok(valid) => println!("Valid: '{}'", valid),
+            Err(e) => println!("{}: {}", e,email),
+        }
+}
 }
 
