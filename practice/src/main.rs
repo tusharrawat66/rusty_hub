@@ -6,7 +6,8 @@ use std::fmt::{Display,Formatter, Result};
 // mod tuples_dtype;
 // mod fibonnaci;
 // mod filter_cars;
-mod parse_nums_string;
+// mod parse_nums_string;
+mod str_manipulation;
 
 
 #[derive(Debug,Clone)]
@@ -169,24 +170,44 @@ fn main() {
     // }
     // println!("{:?}", hello);
 
-    let tests = [
-        "user@domain.com",
-        "user.name@sub.domain.co.uk",
-        "user@",
-        "@domain.com",
-        "user@domain",
-        "user@.com",
-        "",
-        "a@@b.com",
-        "user@domain..com",
-        "tushar.rawat@gmail.com"
-    ];    
 
-    for email in tests{
-        match parse_nums_string::validate_email(email){
-            Ok(valid) => println!("Valid: '{}'", valid),
-            Err(e) => println!("{}: {}", e,email),
-        }
-}
+
+//     let tests = [
+//         "user@domain.com",
+//         "user.name@sub.domain.co.uk",
+//         "user@",
+//         "@domain.com",
+//         "user@domain",
+//         "user@.com",
+//         "",
+//         "a@@b.com",
+//         "user@domain..com",
+//         "tushar.rawat@gmail.com"
+//     ];    
+
+//     for email in tests{
+//         match parse_nums_string::validate_email(email){
+//             Ok(valid) => println!("Valid: '{}'", valid),
+//             Err(e) => println!("{}: {}", e,email),
+//         }
+// }
+
+// let result = str_manipulation::reverse_string("Hello World");
+
+// match result {
+//     Ok(res) => println!("{}",res),
+//     Err(e) => println!("{}", e)
+    
+// }
+
+// let result = str_manipulation::reverse_string_order("Hello rust");
+// println!("{}", result);
+
+
+let result = str_manipulation::rev_str_order_spaces("Hello   rust ");
+println!("{:?}", result);
+
+
+
 }
 
