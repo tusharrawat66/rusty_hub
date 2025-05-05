@@ -48,22 +48,8 @@ pub fn validate_email(email:&str)->Result<String,String>{
     }
 
     let parts: Vec<&str> = email.split('@').collect();
-    if parts.len() != 2 {
-        return Err(String::from("Invalid"));
 
-    }
-    let user: &str = parts[0];
-    let domain: &str = parts[1];
-
-    if user.is_empty() || domain.is_empty() {
-        return Err(String::from("Invalid"));
-    }
-
-    if !domain.contains('.') {
-        return Err(String::from("Invalid"));
-    }
-    let domain_parts: Vec<&str> = domain.split('.').collect();
-    if domain_parts.iter().any(|part| part.is_empty()) {
+    if parts.len() != 2 || parts[0].is_empty() || parts[1].is_empty() || !parts[1].contains('.'){
         return Err(String::from("Invalid"));
     }
 
