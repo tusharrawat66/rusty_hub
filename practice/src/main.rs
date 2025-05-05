@@ -200,8 +200,12 @@ fn main() {
     
 // }
 
-let result = str_manipulation::reverse_string_order("Hello rust");
-println!("{}", result);
+// let result = str_manipulation::reverse_string_order("Hello rust");
+// println!("{}", result);
+
+
+let result = str_manipulation::rev_str_order_spaces("Hello   rust ");
+println!("{:?}", result);
 
 
 
