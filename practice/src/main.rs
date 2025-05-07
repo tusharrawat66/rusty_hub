@@ -8,7 +8,7 @@ use std::fmt::{Display,Formatter, Result};
 // mod filter_cars;
 // mod parse_nums_string;
 mod str_manipulation;
-
+mod control_flow;
 
 #[derive(Debug,Clone)]
 struct Car{
@@ -207,8 +207,11 @@ fn main() {
 // let result = str_manipulation::rev_str_order_spaces("Hello   rust ");
 // println!("{:?}", result);
 
-let result= str_manipulation::get_full_name("Tushar", "Rawat");
-println!("Hi from {}", result);
+// let result= str_manipulation::get_full_name("Tushar", "Rawat");
+// println!("Hi from {}", result);
+
+control_flow::if_test();
+
 
 }
 
