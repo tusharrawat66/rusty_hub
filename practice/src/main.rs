@@ -204,10 +204,11 @@ fn main() {
 // println!("{}", result);
 
 
-let result = str_manipulation::rev_str_order_spaces("Hello   rust ");
-println!("{:?}", result);
+// let result = str_manipulation::rev_str_order_spaces("Hello   rust ");
+// println!("{:?}", result);
 
-
+let result= str_manipulation::get_full_name("Tushar", "Rawat");
+println!("Hi from {}", result);
 
 }
 
