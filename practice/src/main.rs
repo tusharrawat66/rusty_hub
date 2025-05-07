@@ -210,8 +210,10 @@ fn main() {
 // let result= str_manipulation::get_full_name("Tushar", "Rawat");
 // println!("Hi from {}", result);
 
-control_flow::if_test();
-
+// control_flow::if_test();
+// control_flow::while_test();
+// control_flow::loop_test();
+control_flow::for_test();
 
 }
 
