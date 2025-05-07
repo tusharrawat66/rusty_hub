@@ -1,17 +1,20 @@
-// pub fn reverse_string(word:&str)-> Result<String,String>{
+#![allow(dead_code)]
 
-//     if word.is_empty(){
-//         return Err(String::from("String is Empty"));
-//     }
-//     let new_word = word.chars().rev().collect::<String>();
+pub fn reverse_string(word:&str)-> Result<String,String>{
 
-//     Ok(new_word)
-// }
+    if word.is_empty(){
+        return Err(String::from("String is Empty"));
+    }
+    let new_word = word.chars().rev().collect::<String>();
 
-// pub fn reverse_string_order(word:&str)-> String{
-//     let new_word = word.split_whitespace().rev().collect::<Vec<&str>>().join(" ");
-//     new_word
-// }
+    Ok(new_word)
+}
+
+
+pub fn reverse_string_order(word:&str)-> String{
+    let new_word = word.split_whitespace().rev().collect::<Vec<&str>>().join(" ");
+    new_word
+}
 
 pub fn rev_str_order_spaces(word:&str)-> String{
     // let new_word: Vec<&str> = word.split(' ').filter(|w| !w.is_empty()).rev().collect::<Vec<&str>>();
@@ -27,4 +30,11 @@ pub fn rev_str_order_spaces(word:&str)-> String{
                                 .to_string();
     
     new_word
+}
+
+pub fn get_full_name(first: &str, last: &str)-> String{
+
+    let full_name: String = format!("{0} {1}", first, last);
+    full_name
+
 }
