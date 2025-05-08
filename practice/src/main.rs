@@ -9,6 +9,7 @@ use std::fmt::{Display,Formatter, Result};
 // mod parse_nums_string;
 mod str_manipulation;
 mod control_flow;
+mod closure;
 
 #[derive(Debug,Clone)]
 struct Car{
@@ -214,6 +215,8 @@ fn main() {
 // control_flow::while_test();
 // control_flow::loop_test();
 control_flow::for_test();
+closure::closure_test();
+
 
 }
 
