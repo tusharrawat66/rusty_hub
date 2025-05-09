@@ -10,6 +10,7 @@ use std::fmt::{Display,Formatter, Result};
 mod str_manipulation;
 mod control_flow;
 mod closure;
+mod expression_pattern;
 
 #[derive(Debug,Clone)]
 struct Car{
@@ -216,6 +217,10 @@ fn main() {
 // control_flow::loop_test();
 control_flow::for_test();
 closure::closure_test();
+expression_pattern::test_match_int();
+println!("{}",expression_pattern::test_match_string());
+expression_pattern::test_match_array();
+
 
 
 }
