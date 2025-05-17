@@ -13,6 +13,11 @@ mod closure;
 mod expression_pattern;
 mod option_enum;
 
+mod struct_ds;
+use crate::struct_ds::{test_create_person,test_create_vehicle,test_create_vehicletuple};
+
+
+
 #[derive(Debug,Clone)]
 struct Car{
     id: i32,
@@ -238,9 +243,9 @@ else{
     println!("Character is None");
 }
 
-
-// println!("{}",result.unwrap().to_string());
-
+test_create_person();
+test_create_vehicle();
+test_create_vehicletuple();
 
 
 }
