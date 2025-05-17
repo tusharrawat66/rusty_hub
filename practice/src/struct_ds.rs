@@ -31,15 +31,6 @@ struct Person<'p>{
     visited_europe: bool
 }
 
-// Mutable Struct
-// struct Person {
-//     first_name: String,
-//     last_name: String,
-//     birth_year: u16,
-//     birth_month: u8,
-//     visited_europe: bool
-// }
-
 
 
 pub fn test_create_vehicletuple() {
