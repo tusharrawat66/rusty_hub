@@ -11,6 +11,7 @@ mod str_manipulation;
 mod control_flow;
 mod closure;
 mod expression_pattern;
+mod option_enum;
 
 #[derive(Debug,Clone)]
 struct Car{
@@ -220,6 +221,25 @@ closure::closure_test();
 expression_pattern::test_match_int();
 println!("{}",expression_pattern::test_match_string());
 expression_pattern::test_match_array();
+let result = option_enum::test_option_type();
+println!("{}",result.unwrap());
+
+let result =option_enum::test_option_string();
+println!("{}",result.unwrap());
+
+
+let result = option_enum::test_option_chartype();
+
+if result.is_some() {
+    println!("User selected character type"); 
+    println!("Characted selected: {}", result.unwrap().to_string())
+} 
+else{
+    println!("Character is None");
+}
+
+
+// println!("{}",result.unwrap().to_string());
 
 
 
